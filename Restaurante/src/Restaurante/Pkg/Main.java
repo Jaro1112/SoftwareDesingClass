@@ -8,7 +8,7 @@ public class Main {
 	
 		public static void main(String[] args) {
 			
-	        Ingrediente ingrediente1 = new Ingrediente(" Leche", " 1 Litro", 10000.0, Proveedor.COLANTA, 558.0);
+	        Ingrediente ingrediente1 = new Ingrediente(" Leche", " 1 Litro", 12000.0, Proveedor.COLANTA, 558.0);
 	        Ingrediente ingrediente2 = new Ingrediente(" Carne de res", " 1 Kilogramo", 13000.0, Proveedor.CARNESSABASTIAN, 156.0);
 
 	        Scanner sc = new Scanner(System.in);
