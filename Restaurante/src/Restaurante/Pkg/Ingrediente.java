@@ -1,13 +1,13 @@
 package Restaurante.Pkg;
 
 public class Ingrediente {
-		
-		private String nombre;
+	    //atributos
+	    private String nombre;
 	    private String unidad;
 	    private double valorUnidad;
 	    private Proveedor sitioCompra;
 	    private double caloriasUnidad;
-
+	    //constructor
 	    public Ingrediente(String nombre, String unidad, double valorUnidad, Proveedor sitioCompra, double caloriasUnidad) {
 	        this.nombre = nombre;
 	        this.unidad = unidad;
@@ -15,7 +15,7 @@ public class Ingrediente {
 	        this.sitioCompra = sitioCompra;
 	        this.caloriasUnidad = caloriasUnidad;
 	    }
-
+	    //metodos
 	    public String getNombre() {
 	        return nombre;
 	    }
