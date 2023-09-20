@@ -7,23 +7,30 @@ import java.util.ArrayList;
 public class Main {
 	
 		public static void main(String[] args) {
+			System.out.print("\u001B[0m"); 			
+			System.out.print("\u001B[42m");
 			
-			System.out.print("\u001B[47m");
-			
-			 System.out.println("Bienvenido al Sistema de Gestión de Ingredientes del Restaurante");
+			System.out.println("Bienvenido al Sistema de Gestión de Ingredientes del Restaurante");
+			 
+			System.out.print("\u001B[0m"); 
+			 
 		        System.out.println("-----------------------------------------------------------");
 	        	        
 			Scanner scanner = new Scanner(System.in);
 	        List<Ingrediente> listaIngredientes = new ArrayList<>();
 	        
-	                   
-	        System.out.println("Menú:");
-            System.out.println("1. Ver ingredientes");
-            System.out.println("2. Editar ingredientes");
-            System.out.println("3. Eliminar ingredientes");
-            System.out.println("4. Agregar ingrediente");
-            System.out.println("5. Salir del programa");
-            System.out.print("Seleccione una opción: ");
+	        System.out.print("\u001B[30m");
+	        System.out.print("\u001B[46m");
+
+	        
+	        System.out.println("		  Menu                   ");
+	        System.out.println("		                 ");
+            System.out.println("| 1. Ver ingredientes		|");
+            System.out.println("| 2. Editar ingredientes	|");
+            System.out.println("| 3. Eliminar ingredientes	|");
+            System.out.println("| 4. Agregar ingrediente	|");
+            System.out.println("| 5. Salir del programa		|");
+            System.out.print("  | Seleccione una opción: ");
           
             int opcion = scanner.nextInt();
             scanner.nextLine();
@@ -32,11 +39,17 @@ public class Main {
 
 	            switch (opcion) {
 	                case 1:
+	                	 System.out.println("");
+	                     System.out.print("\u001B[42m");
 	                	 System.out.println("Lista de Ingredientes:");
-	                     System.out.println("-----------------------");
+	                	 System.out.print("\u001B[0m"); 
+	                     System.out.println("----------------------------------------");
 	                     for (Ingrediente ingrediente : listaIngredientes) {
+	                    	 System.out.print("\u001B[30m");
+	                    	 System.out.print("\u001B[42m");
 	                         System.out.println(ingrediente.toString());
-	                         System.out.println("-----------------------");
+	                         System.out.print("\u001B[0m");
+	                         System.out.println("----------------------------------------");
 	                    }
 	                    break;
 	                case 2:
@@ -74,10 +87,18 @@ public class Main {
 	                        System.out.print("Nuevas calorías por unidad: ");
 	                        double nuevasCalorias = scanner.nextDouble();
 	                        scanner.nextLine();
-
+                            
+	                        System.out.println("");
+	                        System.out.print("\u001B[42m");
 	                        System.out.println("Ingrediente editado con éxito.");
-	                    	} else {
-	                        System.out.println("No se encontró el ingrediente con el nombre proporcionado.");
+	                        System.out.print("\u001B[0m"); 
+	                        System.out.println("");
+	                    	} else {	                    	
+	            		        System.out.println("");
+	                    		System.out.print("\u001B[41m");	
+	                    		System.out.println("No se encontró el ingrediente con el nombre proporcionado.");
+	                    		System.out.print("\u001B[0m"); 
+	                    		System.out.println("");
 	                    			}	                        	                    
 	                    break;
 	                case 3:
@@ -94,7 +115,11 @@ public class Main {
 	                        listaIngredientes.remove(ingredienteAEliminar);
 	                        System.out.println("Ingrediente eliminado con éxito.");
 	                    } else {
+	                    	System.out.println("");
+	                    	System.out.print("\u001B[41m");
 	                        System.out.println("No se encontró el ingrediente con el nombre proporcionado.");
+	                        System.out.print("\u001B[0m"); 
+                    		System.out.println("");
 	                    }
 	                    break;
 	                case 4:
@@ -102,7 +127,7 @@ public class Main {
 	                    String nombreNuevo = scanner.nextLine();
 	                    System.out.print("Ingrese la unidad del nuevo ingrediente: ");
 	                    String unidadNueva = scanner.nextLine();
-	                    System.out.print("Ingrese el valor por unidad del nuevo ingrediente: ");
+	                    System.out.print("Ingrese el valor por unidad del nuevo ingrediente (Kg): ");
 	                    double valorNuevo = scanner.nextDouble();
 	                    scanner.nextLine(); // espacio
 	                    System.out.print("Ingrese el proveedor del nuevo ingrediente (nombre del proveedor): ");
@@ -115,24 +140,34 @@ public class Main {
 
 	                    Ingrediente nuevoIngrediente = new Ingrediente(nombreNuevo, unidadNueva, valorNuevo, proveedor, caloriasNuevas);
 	                    listaIngredientes.add(nuevoIngrediente);
+	                    
+	                    System.out.println("");
+                        System.out.print("\u001B[42m");
 	                    System.out.println("Ingrediente agregado con éxito.");
+	                    System.out.print("\u001B[0m"); 
+	                    System.out.println("");
 	                    break;
 	                case 5:
-	                	 System.out.println("Cerrando aplicacion. ¡Hasta luego!");
+	                	System.out.print("\u001B[41m");
+	                	System.out.println("Cerrando aplicacion. ¡Hasta luego!");
 	                    scanner.close(); // Cerrar 
 	                    System.exit(0);
 	                    break;
 	                default:
+	                	System.out.print("\u001B[41m");
 	                    System.out.println("Opción no válida.");
 	            }
+	            System.out.print("\u001B[30m");
+	            System.out.print("\u001B[46m");
 	            
-	            System.out.println("Menú:");
-	            System.out.println("1. Ver ingredientes");
-	            System.out.println("2. Editar ingredientes");
-	            System.out.println("3. Eliminar ingredientes");
-	            System.out.println("4. Agregar ingrediente");
-	            System.out.println("5. Salir del programa");     
-	            System.out.print("Seleccione una opción: ");
+	            System.out.println("		  Menu                   ");
+		        System.out.println("		                 ");
+	            System.out.println("| 1. Ver ingredientes		|");
+	            System.out.println("| 2. Editar ingredientes	|");
+	            System.out.println("| 3. Eliminar ingredientes	|");
+	            System.out.println("| 4. Agregar ingrediente	|");
+	            System.out.println("| 5. Salir del programa		|");
+	            System.out.print("  | Seleccione una opción: ");
 
 	            opcion = scanner.nextInt();
 	            scanner.nextLine();
@@ -141,3 +176,4 @@ public class Main {
 		}
 }
 	    	               	        
+               	        
