@@ -4,12 +4,13 @@ import java.util.List;
 
 public class Receta {
 
+		//atributos
 		private String nombreReceta;
 	    private double tiempoPreparacion;
 	    private int numeroPersonas;
 	    private List<String> listaIngredientes;
 	    private String descripcion;
-
+		//constructor
 	    public Receta(String nombreReceta, double tiempoPreparacion, int numeroPersonas, List<String> listaIngredientes,
 	            String descripcion) {
 	        this.nombreReceta = nombreReceta;
@@ -19,7 +20,7 @@ public class Receta {
 	        this.descripcion = descripcion;
 	    }
 
-
+		//metodos
 	    public String getNombreReceta() {
 	        return nombreReceta;
 	    }
