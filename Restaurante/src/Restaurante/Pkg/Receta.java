@@ -63,10 +63,8 @@ public class Receta {
 	    
 	    public String toString() {
 	        return "Receta [nombreReceta=" + nombreReceta + ", tiempoPreparacion=" + tiempoPreparacion + " Minutos" + ", numeroPersonas="
-	                + numeroPersonas + ", listaIngredientes=" + listaIngredientes + ", descripcion=" + descripcion + ", Total calorias=" + sumcalorias + "]";
-	    }
-	    
-	    int sumcalorias = 558+156;
+	                + numeroPersonas + ", listaIngredientes=" + listaIngredientes + ", descripcion=" + descripcion + ", Total calorias=" + "]";
+	    }	    
 }
 
 
