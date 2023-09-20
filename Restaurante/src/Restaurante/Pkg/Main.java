@@ -8,57 +8,136 @@ public class Main {
 	
 		public static void main(String[] args) {
 			
-	        Ingrediente ingrediente1 = new Ingrediente(" Leche", " 1 Litro", 12000.0, Proveedor.COLANTA, 558.0);
-	        Ingrediente ingrediente2 = new Ingrediente(" Carne de res", " 1 Kilogramo", 13000.0, Proveedor.CARNESSABASTIAN, 156.0);
+			System.out.print("\u001B[47m");
+			
+			 System.out.println("Bienvenido al Sistema de Gestión de Ingredientes del Restaurante");
+		        System.out.println("-----------------------------------------------------------");
+	        	        
+			Scanner scanner = new Scanner(System.in);
+	        List<Ingrediente> listaIngredientes = new ArrayList<>();
+	        
+	                   
+	        System.out.println("Menú:");
+            System.out.println("1. Ver ingredientes");
+            System.out.println("2. Editar ingredientes");
+            System.out.println("3. Eliminar ingredientes");
+            System.out.println("4. Agregar ingrediente");
+            System.out.println("5. Salir del programa");
+            System.out.print("Seleccione una opción: ");
+          
+            int opcion = scanner.nextInt();
+            scanner.nextLine();
+            
+	        while (opcion != 5) {
 
-	        Scanner sc = new Scanner(System.in);
-	       	System.out.println("1- Editar receta 2- Eliminar Receta 3- Continuar");
-	       	String eleccion = sc.nextLine();
-			//Para hacer participar a los usuarios y no solo al programador
-	        switch (eleccion){
-	        	case "1":	
-	        		System.out.println("Editar ingrediente 1, 2 para eliminar, 3 agregar ingrediente, 4 para ver los ingredientes");
-	        		String cual = sc.nextLine();
-	        		switch(cual) {
-	        			case "1":
-	        			
-	        			break;
-	        			case "2":
-	        				
-	        			break;
-	        		}
-	            break;
-	        		case "2":
-	        			System.out.println("Editar ingrediente 1 o 2");
-		        		String cual2 = sc.nextLine();
-		        		switch(cual2) {
-		        			case "1":
-		        				ingrediente1 = null;
-		        				break;
-		        			case "2":
-		        				ingrediente2 = null;
-		        				break;		        				
-		        		case"3":
-		        		Ingrediente ingrediente3 = new Ingrediente(" Carne de cerdo", "1 Kilogramo", 13000.0, Proveedor.CARNESSABASTIAN, 180.0);
-	        default:
-	        	List<String> listaIngredientes = new ArrayList<>();
-		        listaIngredientes.add(ingrediente1.getNombre());
-		        listaIngredientes.add(ingrediente2.getNombre());
+	            switch (opcion) {
+	                case 1:
+	                	 System.out.println("Lista de Ingredientes:");
+	                     System.out.println("-----------------------");
+	                     for (Ingrediente ingrediente : listaIngredientes) {
+	                         System.out.println(ingrediente.toString());
+	                         System.out.println("-----------------------");
+	                    }
+	                    break;
+	                case 2:
+	                	System.out.print("Ingrese el nombre del ingrediente que desea editar: ");
+	                    String nombreEditar = scanner.nextLine();
+	                    Ingrediente ingredienteAEditar = null;
 
+	                    for (Ingrediente ingrediente : listaIngredientes) {
+	                        if (ingrediente.getNombre().equalsIgnoreCase(nombreEditar)) {
+	                            ingredienteAEditar = ingrediente;
+	                            break;
+	                        }
+	                    }
+
+	                    if (ingredienteAEditar != null) {
+	                        System.out.println("Editando ingrediente: " + ingredienteAEditar.getNombre());
+	                        System.out.print("Nuevo nombre: ");
+	                        String nuevoNombre = scanner.nextLine();
+	                        ingredienteAEditar.setNombre(nuevoNombre);
+
+	                        System.out.print("Nueva unidad: ");
+	                        String nuevaUnidad = scanner.nextLine();
+	                        ingredienteAEditar.setUnidad(nuevaUnidad);
+
+	                        System.out.print("Nuevo valor por unidad: ");
+	                        double nuevoValor = scanner.nextDouble();
+	                        scanner.nextLine();
+	                        ingredienteAEditar.setValorUnidad(nuevoValor);
+
+	                        System.out.print("Nuevo proveedor (nombre del proveedor): ");
+	                        String nuevoProveedor = scanner.nextLine();
+	                        Proveedor proveedor = Proveedor.valueOf(nuevoProveedor.toUpperCase());
+	                        ingredienteAEditar.setSitioCompra(proveedor);
+
+	                        System.out.print("Nuevas calorías por unidad: ");
+	                        double nuevasCalorias = scanner.nextDouble();
+	                        scanner.nextLine();
+
+	                        System.out.println("Ingrediente editado con éxito.");
+	                    	} else {
+	                        System.out.println("No se encontró el ingrediente con el nombre proporcionado.");
+	                    			}	                        	                    
+	                    break;
+	                case 3:
+	                    System.out.print("Ingrese el nombre del ingrediente que desea eliminar: ");
+	                    String nombreEliminar = scanner.nextLine();
+	                    Ingrediente ingredienteAEliminar = null;
+	                    for (Ingrediente ingrediente : listaIngredientes) {
+	                        if (ingrediente.getNombre().equalsIgnoreCase(nombreEliminar)) {
+	                            ingredienteAEliminar = ingrediente;
+	                            break;
+	                        }
+	                    }
+	                    if (ingredienteAEliminar != null) {
+	                        listaIngredientes.remove(ingredienteAEliminar);
+	                        System.out.println("Ingrediente eliminado con éxito.");
+	                    } else {
+	                        System.out.println("No se encontró el ingrediente con el nombre proporcionado.");
+	                    }
+	                    break;
+	                case 4:
+	                	System.out.print("Ingrese el nombre del nuevo ingrediente: ");
+	                    String nombreNuevo = scanner.nextLine();
+	                    System.out.print("Ingrese la unidad del nuevo ingrediente: ");
+	                    String unidadNueva = scanner.nextLine();
+	                    System.out.print("Ingrese el valor por unidad del nuevo ingrediente: ");
+	                    double valorNuevo = scanner.nextDouble();
+	                    scanner.nextLine(); // espacio
+	                    System.out.print("Ingrese el proveedor del nuevo ingrediente (nombre del proveedor): ");
+	                    String proveedorNuevo = scanner.nextLine();
+	                    System.out.print("Ingrese las calorías por unidad del nuevo ingrediente: ");
+	                    double caloriasNuevas = scanner.nextDouble();
+	                    scanner.nextLine(); // espacio
+
+	                    Proveedor proveedor = Proveedor.valueOf(proveedorNuevo.toUpperCase());
+
+	                    Ingrediente nuevoIngrediente = new Ingrediente(nombreNuevo, unidadNueva, valorNuevo, proveedor, caloriasNuevas);
+	                    listaIngredientes.add(nuevoIngrediente);
+	                    System.out.println("Ingrediente agregado con éxito.");
+	                    break;
+	                case 5:
+	                	 System.out.println("Cerrando aplicacion. ¡Hasta luego!");
+	                    scanner.close(); // Cerrar 
+	                    System.exit(0);
+	                    break;
+	                default:
+	                    System.out.println("Opción no válida.");
+	            }
+	            
+	            System.out.println("Menú:");
+	            System.out.println("1. Ver ingredientes");
+	            System.out.println("2. Editar ingredientes");
+	            System.out.println("3. Eliminar ingredientes");
+	            System.out.println("4. Agregar ingrediente");
+	            System.out.println("5. Salir del programa");     
+	            System.out.print("Seleccione una opción: ");
+
+	            opcion = scanner.nextInt();
+	            scanner.nextLine();
 	        }
 	        
-/*	        	       
-	        Receta receta1 = new Receta("Lasaña", 60.0, 4, listaIngredientes, "Una lasaña de carne");
-
-	        
-	        System.out.println("Receta:");
-	        System.out.println(receta1);
-	        System.out.println("\nIngredientes:");
-	        System.out.println(ingrediente1);
-	        System.out.println(ingrediente2);
-	    	*/
-	        }
 		}
-	#dsafasdf
 }
-
+	    	               	        
