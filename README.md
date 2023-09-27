@@ -3,6 +3,6 @@ Repositorio principal para el desarrollo del proyecto de la clase diseño de sof
 
 Realizado por
 Zarella Burbano
-Kevin 
-Lina
+Kevin Chachinoy
+Lina Viveros
 Julian Rodriguez 
