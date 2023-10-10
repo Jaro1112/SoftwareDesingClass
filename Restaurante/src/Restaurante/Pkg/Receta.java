@@ -5,7 +5,7 @@ import java.util.List;
 public class Receta {
 
 		//atributos
-		private String nombreReceta;
+	      private String nombreReceta;
 	    private double tiempoPreparacion;
 	    private int numeroPersonas;
 	    private List<String> listaIngredientes;
@@ -63,8 +63,11 @@ public class Receta {
 	    
 	    public String toString() {
 	        return "Receta [nombreReceta=" + nombreReceta + ", tiempoPreparacion=" + tiempoPreparacion + " Minutos" + ", numeroPersonas="
-	                + numeroPersonas + ", listaIngredientes=" + listaIngredientes + ", descripcion=" + descripcion + ", Total calorias=" + "]";
-	    }	    
+	      
+			+ numeroPersonas + ", listaIngredientes=" + listaIngredientes + ", descripcion=" + descripcion + ", Total calorias=" + "]";
+	    }	
+
+	
 }
 
 
