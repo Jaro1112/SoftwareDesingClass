@@ -160,7 +160,7 @@ public class Main {
 	            }
 	            System.out.print("\u001B[30m");
 	            System.out.print("\u001B[46m");
-	            
+	            //Orden menu
 	            System.out.println("		  Menu                   ");
 		        System.out.println("		                 ");
 	            System.out.println("| 1. Ver ingredientes		|");
