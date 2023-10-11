@@ -50,6 +50,7 @@ public class Main {
 
 	            switch (opcion) {
 	                case 1:
+				    //Ver Ingredientes
 	                	 System.out.println("");
 	                     System.out.print("\u001B[42m");
 	                	 System.out.println("Lista de Ingredientes:");
@@ -64,6 +65,7 @@ public class Main {
 	                    }
 	                    break;
 	                case 2:
+				    // Editar Ingredientes
 	                	System.out.print("Ingrese el nombre del ingrediente que desea editar: ");
 	                    String nombreEditar = scanner.nextLine();
 	                    Ingrediente ingredienteAEditar = null;
@@ -113,6 +115,7 @@ public class Main {
 	                    			}	                        	                    
 	                    break;
 	                case 3:
+				//Eliminar Ingredientes    
 	                    System.out.print("Ingrese el nombre del ingrediente que desea eliminar: ");
 	                    String nombreEliminar = scanner.nextLine();
 	                    Ingrediente ingredienteAEliminar = null;
@@ -134,6 +137,7 @@ public class Main {
 	                    }
 	                    break;
 	                case 4:
+				    //Agregar ingrediente
 	                	System.out.print("Ingrese el nombre del nuevo ingrediente: ");
 	                    String nombreNuevo = scanner.nextLine();
 	                    System.out.print("Ingrese la unidad del nuevo ingrediente: ");
@@ -165,6 +169,7 @@ public class Main {
 	                    System.exit(0);
 	                    break;
 	                case 6:
+				    //RECETAS DISPONIBLES
 	                	 System.out.println("Verificando recetas disponibles...");
 
 	                	    if (listaRecetas.isEmpty()) {
